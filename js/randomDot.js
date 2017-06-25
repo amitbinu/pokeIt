@@ -1,6 +1,6 @@
 var randomDot = function(canvasWidth, canvasHeight){
-	this.x = getRandomIntInclusive(20,canvasWidth-20);
-	this.y = getRandomIntInclusive(20,canvasHeight-20);
+	this.x = getRandomIntInclusive(50,canvasWidth-50);
+	this.y = getRandomIntInclusive(50,canvasHeight-50);
 	this.color = randomColor();
 	this.radius = randomRadius();
 }
@@ -30,7 +30,7 @@ var randomColor = function(){
 }
 
 var randomRadius = function(){
-	var randomNumber = getRandomIntInclusive(0,5);
+	var randomNumber = getRandomIntInclusive(0,7);
 	switch(randomNumber){
 		case 0:
 			return 20;
@@ -44,5 +44,9 @@ var randomRadius = function(){
 			return 50;
 		case 5:
 			return 55;
+		case 6:
+			return 100;
+		case 7:
+			return 100;
 	}
 }
