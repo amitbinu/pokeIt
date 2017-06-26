@@ -1,9 +1,14 @@
+
+
 window.onload = function(){
 	canvas = document.getElementById("Canvas");
+	canvas.width= window.innerWidth * 0.8;
+	canvas.height = window.innerHeight;
 	body = document.getElementById("body");
 	context = canvas.getContext("2d");
-	canvas.width= window.innerWidth;
-	canvas.height = window.innerHeight;
+	box = document.getElementById("box");
+	box2 = document.getElementById("box2");
+	
 	x = document.getElementById("StartButton");
 	if (x.addEventListener) {
 		x.addEventListener("click", startGame);
@@ -16,13 +21,15 @@ window.onload = function(){
 var startGame = function (){
 	canvas.style.display = 'initial';
 	x.style.display = 'none';
+	box.style.display = 'initial';
+	box2.style.display = 'initial';
 	CountDown = setInterval(startCount,1000/1);
 };
 
 
 var i =3;
 var startCount = function(){
-	canvas.width= window.innerWidth;
+	canvas.width= window.innerWidth * 0.8;
 	canvas.height = window.innerHeight;
 	context.fillStyle = '#000000';
 	context.fillRect(0,0,canvas.width,canvas.height);
@@ -37,19 +44,11 @@ var startCount = function(){
 	if (i===-1) {
 		context.clearRect(0,0,canvas.width,canvas.height);
 		clearInterval(CountDown);
+		startCounting();
 		showDots();
-		setTimeout(stopWatch,1000);
 	}
 };
 
-var count = 0;
-var stopWatch = function(){
-	count++;
-	if(count===60){
-		TimeOut = true;
-		clearTimeout();
-	}
-}
 var TimeOut = false;
 var numberOfDots  = 0;
 var dot;
