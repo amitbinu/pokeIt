@@ -2,27 +2,31 @@
 
 window.onload = function(){
 	canvas = document.getElementById("Canvas");
-	canvas.width= window.innerWidth * 0.8;
-	canvas.height = window.innerHeight;
 	body = document.getElementById("body");
 	context = canvas.getContext("2d");
-	box = document.getElementById("box");
-	box2 = document.getElementById("box2");
+	information = document.getElementById("information");
 	
-	x = document.getElementById("StartButton");
-	if (x.addEventListener) {
-		x.addEventListener("click", startGame);
+	startButton = document.getElementById("StartButton");
+	if (startButton.addEventListener) {
+		startButton.addEventListener("click", startGame);
 	} 
-	else if (x.attachEvent) {
-		x.attachEvent("onclick", startGame);
+	else if (startButton.attachEvent) {
+		startButton.attachEvent("onclick", startGame);
 	} 
+
+/*	replayButton = document.getElementById("replayButton");
+	if(replayButton.addEventListener){
+		replayButton.addEventListener("onclick",reset);
+	}
+	else if(replayButton.attachEvent){
+		replayButton.attachEvent("onclick",reset);
+	}*/
 };
 
 var startGame = function (){
 	canvas.style.display = 'initial';
-	x.style.display = 'none';
-	box.style.display = 'initial';
-	box2.style.display = 'initial';
+	startButton.style.display = 'none';
+	information.style.display = 'initial';
 	CountDown = setInterval(startCount,1000/1);
 };
 
@@ -81,7 +85,7 @@ var showDots = function(){
 		});		
 	}
 	else if(canvas.attachEvent){
-		canvas.addEventListener("click",function(e){
+		canvas.attachEvent("click",function(e){
 			if(TimeOut === true){
 				context.clearRect(0,0,canvas.width,canvas.height);
 			}
@@ -95,54 +99,6 @@ var showDots = function(){
 	
 };
 
-var gameRules = function(clientX, clientY){
-				clickedDot = isDotClicked(dot.x,dot.y,dot.radius,clientX,clientY);
-				if(clickedDot===true){
-					if(dot.radius===100){ //Reduces points of clicking recatangle
-						numberOfDots--;
-					}
-					else{ //Adds points for clicking the dot.
-						numberOfDots++;
-					}
-						
-					context.clearRect(0,0,canvas.width,canvas.height);
-					dot = new randomDot(canvas.width,canvas.height);
-					context.fillStyle = dot.color;
-					context.beginPath();
-					if(dot.radius ===100){ //Creates rectangle if the returned radius is 100.
-						context.rect(dot.x,dot.y,60,60);
-					}
-					else{ //Creates a circle / dot if the returned radius is not 100.
-						context.arc(dot.x,dot.y,dot.radius,0,2*Math.PI);
-					}
-					context.fill();
-					context.stroke();
-				
-				}
-				else{ 
-					if(dot.radius === 100){//If the rectangle is not clicked, points will be added.
-						numberOfDots++;
-					}
-					else{//If the dot is not clicked, points will be deducted.
-						numberOfDots--;
-					}
-					
-					context.clearRect(0,0,canvas.width,canvas.height);
-					dot = new randomDot(canvas.width,canvas.height);
-					context.fillStyle = dot.color;
-					context.beginPath();
-					if(dot.radius ===100){
-						context.rect(dot.x,dot.y,60,60);
-					}
-					else{
-						context.arc(dot.x,dot.y,dot.radius,0,2*Math.PI);
-					}
-					context.fill();
-					context.stroke();
-				};
-				console.log(numberOfDots);
-			
-}
 
 var isDotClicked = function(xPoint,yPoint,radius,clickedX,clickedY){
 	if(radius===100){
