@@ -14,6 +14,19 @@
 	<script type="text/javascript" src='js/timeInterval.js'></script>
 </head>
 <body id="body">
+	<div id="signIn">
+		<form>
+			<h2>User name:</h2>
+			<input type="text" name="username" class="userDetails"><br>
+			<h2>User password:</h2>
+			<input type="password" name="psw" class="userDetails">
+		</form> 
+
+		<div id="buttons">
+			<div id="signUpButton">Sign Up</div>
+			<div id="signInButton">Sign In</div>
+		</div>
+	</div>
 	<canvas id="Canvas"></canvas>
 	<h1 id="StartButton">Start</h1>
 	<div id="information"ng-app='updateData'  ng-controller='currentTime'>
