@@ -1,7 +1,7 @@
 var gameRules = function(clientX, clientY){
 				clickedDot = isDotClicked(dot.x,dot.y,dot.radius,clientX,clientY);
 				if(clickedDot===true){
-					if(dot.radius===100){ //Reduces points of clicking recatangle
+					if(dot.radius===100){ //Deducts points for clicking recatangle
 						numberOfDots--;
 					}
 					else{ //Adds points for clicking the dot.
@@ -43,6 +43,4 @@ var gameRules = function(clientX, clientY){
 					context.fill();
 					context.stroke();
 				};
-				console.log(numberOfDots);
-			
 }
