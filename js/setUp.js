@@ -1,11 +1,39 @@
 
 
 window.onload = function(){
+	signUp = document.getElementById("signUpButton");
+	signIn = document.getElementById('signInButton');
+	
+	console.log("Loading")
+	if(signUp.addEventListener){
+		signUp.addEventListener("click", addUser);
+	}
+
+	if(signIn.addEventListener){
+		signIn.addEventListener("click", checkUser);
+	}
+
+	circle1 = document.getElementById("circle1");
+	var backAnim = setInterval(startAnim, 2000);
+};
+
+var addUser = function(){
+	userName = document.getElementById('userName').value;
+	userPswd = document.getElementById('userpswd').value;
+	
+}
+
+var checkUser = function(){
+	userName = document.getElementById('userName').value;
+	userPswd = document.getElementById('userpswd').value;
+	
+}
+
+var setUp = function(){
 	canvas = document.getElementById("Canvas");
 	body = document.getElementById("body");
 	context = canvas.getContext("2d");
 	information = document.getElementById("information");
-	
 	startButton = document.getElementById("StartButton");
 	if (startButton.addEventListener) {
 		startButton.addEventListener("click", startGame);
@@ -21,7 +49,7 @@ window.onload = function(){
 	else if(replayButton.attachEvent){
 		replayButton.attachEvent("onclick",reset);
 	}*/
-};
+}
 
 var startGame = function (){
 	canvas.style.display = 'initial';
