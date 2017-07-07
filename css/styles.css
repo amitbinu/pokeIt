@@ -1,5 +1,6 @@
+
 body{
-	background: #fff;
+	background: #000000;
 	margin: 0;
 	height: 100%;
 	overflow: hidden;
@@ -21,19 +22,22 @@ html{
 
 
 #signIn{
-	width: 60%;
-	height: 40%;
+	height: 45%;
 	background: black;
-	margin: 15% auto;
-	border: 1px solid red;
 	color: white;
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
+
 
 #signIn form{
 	display: block;
 	height: 60%;
 	margin: auto;
 	margin-top: 5%;
+	z-index: 100;
 }
 #signIn h2{
 	letter-spacing: 2px;
@@ -42,41 +46,58 @@ html{
 	font-size: 3em;
 	padding-left: 2vw;
 	margin: auto;
+	margin-left: 10%;
+	z-index: 100;
 	margin-top: 3.5%;
 }
 
 #signIn .userDetails{
-	margin-left: 20%;
+	margin-left: 40%;
 	width: 55%;
 	height: 14%;
 	border-radius: 5px;
+	z-index: 100;
 }
 
 #signIn input[type="text"],#signIn input[type="password"] {
 	font-size: 1.8em;
 	letter-spacing: 1.2px;
+	z-index: 100;
 }
 
 #buttons{
-	width: 50%;
+	width: 100%;
 	display: inline-flex;
-	font-size: 2.5em;
-	margin-left: 20%;
+	font-size: 2em;
 	margin-top: 0.6vw;
+	z-index: 100;
+
 }
 
 #buttons #signInButton, #signUpButton {
 	margin: auto;
+	cursor: pointer;
+	position: relative;
+	left: 4%;
 	background: #74f22b;
 	color: black;
 	font-style: italic;
 	font-weight: 500;
 	border-radius: 50%;
-	padding: 20px 20px;
+	padding: 1vw 1vw;
+	z-index: 100;
 }
 
 
 
+#circle1{
+	position: absolute;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	background: black;
+	z-index: 50; 
+}
 #StartButton{
 	display: none;
 	position: relative;
