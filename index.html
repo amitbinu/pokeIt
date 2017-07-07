@@ -7,7 +7,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script type="text/javascript" src="js/backgroundAnim.js"></script>
 	<script type="text/javascript" src='js/setUp.js'></script>
 	<script type="text/javascript" src="js/gameRules.js"></script>
 	<script type="text/javascript" src="js/randomDot.js"></script>
@@ -17,16 +20,18 @@
 	<div id="signIn">
 		<form>
 			<h2>User name:</h2>
-			<input type="text" name="username" class="userDetails"><br>
-			<h2>User password:</h2>
-			<input type="password" name="psw" class="userDetails">
+			<input type="text" name="username" class="userDetails" id="userName" required><br>
+			<h2>Password:</h2>
+			<input type="password" name="psw" class="userDetails" id="userpswd" required>
 		</form> 
 
 		<div id="buttons">
-			<div id="signUpButton">Sign Up</div>
 			<div id="signInButton">Sign In</div>
+			<div id="signUpButton">Sign Up</div>
 		</div>
 	</div>
+
+		<div id="circle1"></div>
 	<canvas id="Canvas"></canvas>
 	<h1 id="StartButton">Start</h1>
 	<div id="information"ng-app='updateData'  ng-controller='currentTime'>
