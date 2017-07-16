@@ -8,10 +8,10 @@ var startAnim = function(){
 	circle1.style.height = dot.radius+"px";
 	circle1.style.background = dot.color;
 
-	$('#circle1').effect('bounce',{times:4, duration:800,complete: explode});
+	$('#circle1').effect('bounce',{times:4, duration:500,complete: explode});
 	
 };
 
 var explode = function(){
-	$('#circle1').effect('explode',600);
+	$('#circle1').effect('explode',500);
 }
