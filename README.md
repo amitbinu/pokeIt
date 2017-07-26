@@ -5,4 +5,4 @@ A web game where the player have to click / poke as many dots as they can within
 
 *Shows the users with top 5 scores and the current user's rank compared to other users.*
 
-This game is created using jQuery, and Firebase.
+This game is created using jQuery and P5.
