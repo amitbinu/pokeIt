@@ -1,11 +1,19 @@
-var randomDot = function(canvasWidth, canvasHeight){
-	this.x = getRandomIntInclusive(50,canvasWidth-50);
-	this.y = getRandomIntInclusive(50,canvasHeight-50);
+var randomDot = function(){
+	minHeight = windowHeight *0.2;
+	maxHeight = windowHeight*0.85;
+
+	minWidth = windowWidth * 0.05;
+	maxWidth = windowWidth * 0.85;
+
+	this.x = getRandomIntInclusive(minWidth,maxWidth);
+	this.y = getRandomIntInclusive(minHeight,maxHeight);
+	
 	this.color = randomColor();
 	this.radius = randomRadius();
 }
 
 function getRandomIntInclusive(min, max) {
+	console.log("minimum " + min + " maximum " + max);
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
@@ -33,17 +41,17 @@ var randomRadius = function(){
 	var randomNumber = getRandomIntInclusive(0,7);
 	switch(randomNumber){
 		case 0:
-			return 20;
+			return 5;
 		case 1:
-			return 30;
+			return 6.5;
 		case 2:
-			return 40;
+			return 8;
 		case 3:
-			return 45;
+			return 9.5;
 		case 4:
-			return 50;
+			return 6;
 		case 5:
-			return 55;
+			return 7;
 		case 6:
 			return 100;
 		case 7:
