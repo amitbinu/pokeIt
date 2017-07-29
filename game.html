@@ -16,7 +16,8 @@
     <script type="text/javascript" src="libraries/p5.dom.js"></script>
     <script type="text/javascript" src="js/signIn.js"> </script>
     <script type="text/javascript" src="js/randomDot.js"></script>
-    <script type="text/javascript" src='js/setUp.js'></script>
+    <script type="text/javascript" src = "js/stopwatch.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 	
 	
 <!--
@@ -25,48 +26,27 @@
  -->	
 </head>
 <body>
-	<div id="circle1"></div>
-	<canvas id="Canvas"></canvas>
-	<div id="center">
-		
+	<div id="menuBar">
+		<h1 class="userInfo" id="userRank">Rank : #5</h1>
+		<h1 class="userInfo" id="userName">Welcome Amit</h1>
+		<button class="userInfo" id="signOut">Sign Out</button>
 	</div>
-		
+	<div id="circle1"></div>	
 	<div class="outer">
   	<div class="middle">
     <div class="inner">
     	<button id="StartButton">Start</button>
     	<div id="time">3</div>
+    	<div id="GameOver">
+    		<button id="replay">Replay</button>
+    		<button  class="userInfo" id="signOut2"></button>
+    		<h1 class="userInfo">Current Rank</h1>
+    	</div>
     </div>
   	</div>
 	</div>
 	
 	
-	<div id="information">
-		<div id="box">
-			<h1 id="Timetitle">Time Left</h1>
-			<h1 id='Time'>{{setTime}}</h1>
-		</div>
-		<i id="replayButton" class="material-icons">replay</i>
-		<div id="box2">
-			<table id ="table">
-				<caption id="ScoreBoard">Score Board</caption>
-				<tr>
-					<th>User</th>
-					<th>Rank</th>
-					<th>Score</th>
-				</tr>
-				<tr>
-					<td>Jill</td>
-					<td>1</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>You</td>
-					<td>2</td>
-					<td>{{setScore}}</td>
-				</tr>
-			</table> 
-		</div>
-	</div>
+	
 </body>
 </html>
