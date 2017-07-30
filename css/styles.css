@@ -1,27 +1,75 @@
-
-body{
-	background: #000000;
-	margin: 0;
-	height: 100%;
-	overflow: hidden;
-}
-
 html{
 	margin: 0;
 	height: 100%;
+	-ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background-image: -webkit-linear-gradient(#777777,#2b2a2a);
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#Canvas{
-	width: 80%;
-	height: 100%;
-	overflow: hidden;
+body{
+	background: #000000;
+	 background-image: -webkit-linear-gradient(#777777,#2b2a2a);
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 	margin: 0;
-	display: none;
-	background: black;
+}
+#indexBody{
+	overflow: auto;
 }
 
+#gameBody{
+	overflow: hidden;
+	height: 88%;
+}
 
+#title, #Description{
+	color: black;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+}
 
+#title{
+	font-size: 5rem;
+}
+
+#firebaseui-auth-container, #information{
+	margin: 0;
+	margin-top: 1%;
+}
+#information{
+	display: inline-flex;
+}
+
+#Description{
+	width: 50%;
+	margin: 0;
+	background-image: -webkit-linear-gradient(#ff9b96,#90f9f4);
+	border-radius: 6px;
+	margin: auto;
+}
+
+#rules{
+	font-size: 3rem;
+	text-align: center;
+font}
+#rule1{
+	font-size: 2rem;
+}
+
+#gif{
+	width: 30%;
+	height: 30%;
+	margin: auto;
+	border: 2px solid #000000;
+}
 #circle1{
 	display: none;
 	position: absolute;
@@ -30,6 +78,7 @@ html{
 	height: 20px;
 	background: red;
 	z-index: 50; 
+	border: 3px solid black;
 }
 #StartButton{
 	display: block;
@@ -42,96 +91,15 @@ html{
 	letter-spacing: 0.03em;
 	font-size: 8em;
 	text-align: center;
-	border-radius: 0.2em;
+	border-radius: 0.2rem;
 	vertical-align: baseline;
 	cursor: pointer;
 }
 
-
-#center{
-	height: 100%;
-	display: table-cell;
-	vertical-align: middle;
-	margin: auto;
-}
-#information{
-	display: none;
-	position: absolute;
-	right: 0;
-	width: 20%;
-	background: #ffffff;
-}
-
-
-#box, #box2, #replayButton{
-	position: relative;
-	border: 2px solid black;
-	text-align: center;
-}
-
-#box{
-	top: 5px;
-	width: 80%;
-	margin: 0 auto;
-}
-
-#replayButton{
-	bottom: 10%;
-	border: none;
-	font-size: 3vw;
-	width: 4vw;
-	height: 4vw;
-	right: 8vw;
-	padding-top: 1vw;
-	border-radius: 100%;
-	background: black;
-	color: red;
-	cursor: pointer;
-	display: none;
-}
-#box2{
-	padding-top: 0;
-	padding-bottom: 25px;
-	width: 90%;
-	margin: 0 auto;
-
-}
-
-#table{
-	width: 100%;
-	height: 100%;
-	border: 1px solid black;
-	border-right: transparent;
-	border-left: transparent;
-	border-bottom: transparent;
-	margin: 0 auto;
-}
-
-#Timetitle, #ScoreBoard{
-	font-size: 3vw;
-	margin: 0;
-}
-
-
-#Time{
-	font-weight: 100;
-	font-size: 2vw;
-	margin: 0 auto;
-	width: 100%;
-	height: 100%;
-}
-
-th{
-	font-size: 1.5vw;
-}
-
-td{
-	font-size: 1vw;
-}
-
 #time{
+	display: none;
 	text-align: center;
-	font-size: 10em;
+	font-size: 10rem;
 	color: red;
 }
 
@@ -149,6 +117,64 @@ td{
 
 .inner {
     margin-left: auto;
-    margin-right: auto; 
-    width: /*whatever width you want*/;
+    margin-right: auto;
+}
+
+
+#menuBar{
+	display: inline-flex;
+	width: 100%;
+	height: 10%;
+	background: #545454;
+	margin: auto;
+}
+
+.userInfo{
+	font-size: 2rem;
+	color: white;
+	background: #1faf84;
+	border-radius: 0.3rem;
+	border: 0.01rem solid black;
+	padding: 0.3rem;
+	margin: auto;
+}
+
+#signOut{
+	cursor: pointer;
+}
+
+#GameOver{
+	display: none;
+}
+
+@media (max-width:800px){
+	#title{
+		margin: 0;
+		margin-top: 0.05%;
+	font-size: 3.5rem;
+}
+	#information{display: block;
+		width: 100%;}
+
+	#Description{
+		width: 90%;
+		margin: 0;
+		margin-left: 5%;
+	}
+	#rules{
+		font-size: 2.5rem;
+		text-align: center;
+		font
+	}
+	#rule1{
+		font-size: 1.5rem;
+	}
+	#gif{
+	width: 70%;
+	height: 90%;
+	margin: 0;
+	border: 2px solid #000000;
+	margin-left: 15%;
+}
+
 }
