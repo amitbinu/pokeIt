@@ -2,21 +2,30 @@
 <html>
 <head>
 	<title>pokeIt</title>
-	<meta name="viewport" content="initial-scale=1">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
     <!-- 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
     <script type="text/javascript" src="libraries/jquery.js"></script>
     <script type="text/javascript" src="libraries/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/backgroundAnim.js"></script>
 	<script type="text/javascript" src="js/signIn.js"> </script>
 </head>
-<body id="body">
-
+<body id="indexBody">
+	<h1 id="title">Poke It</h1>
 	<div id="firebaseui-auth-container"></div>
-		</body>
+	<div id="information">
+		<div id="Description">
+			<h1  id="rules"><u> Game Rules </u></h1>
+			<h1 id="rule1"> - Click as many circle dots as you can ! </h1>
+		</div>
+		
+	<img src="pictures/pokeIt.gif" id="gif">
+		
+	</div>
+	</body>
 </html>
