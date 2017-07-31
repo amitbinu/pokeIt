@@ -1,15 +1,15 @@
+
 html{
-	margin: 0;
 	height: 100%;
-	-ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    background-image: -webkit-linear-gradient(#777777,#2b2a2a);
-    -webkit-background-size: cover;
+	background-image: -webkit-linear-gradient(#777777,#2b2a2a);
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
+	margin: 0;
+	overflow: hidden;
 }
-
 body{
 	background: #000000;
 	 background-image: -webkit-linear-gradient(#777777,#2b2a2a);
@@ -26,7 +26,6 @@ body{
 
 #gameBody{
 	overflow: hidden;
-	height: 88%;
 }
 
 #title, #Description{
@@ -59,17 +58,20 @@ body{
 #rules{
 	font-size: 3rem;
 	text-align: center;
-font}
+font
+}
 #rule1{
 	font-size: 2rem;
 }
 
 #gif{
-	width: 30%;
-	height: 30%;
+	width: 45%;
+	height: 45%;
 	margin: auto;
 	border: 2px solid #000000;
 }
+
+
 #circle1{
 	display: none;
 	position: absolute;
@@ -126,24 +128,34 @@ font}
 	width: 100%;
 	height: 10%;
 	background: #545454;
-	margin: auto;
 }
 
 .userInfo{
-	font-size: 2rem;
+	font-size: 4rem;
 	color: white;
 	background: #1faf84;
 	border-radius: 0.3rem;
 	border: 0.01rem solid black;
-	padding: 0.3rem;
+	padding: 0.5rem;
 	margin: auto;
 }
 
-#signOut{
+#signOut, #replay{
 	cursor: pointer;
 }
 
 #GameOver{
+	margin: 0;
+	display: none;
+	width: 40%;
+	height: 40%;
+	background-image: -webkit-linear-gradient(#ff9b96,#90f9f4);
+	text-align: center;
+	margin-left: 30%;
+	border-radius: 0.5rem;
+}
+
+.dropdown{
 	display: none;
 }
 
@@ -152,7 +164,18 @@ font}
 		margin: 0;
 		margin-top: 0.05%;
 	font-size: 3.5rem;
-}
+	}
+	html{
+		overflow: hidden;
+	}
+	body{
+		overflow: hidden;
+		max-height: 90%;
+	}
+
+	.userInfo{
+		font-size: 3.2rem;
+	}
 	#information{display: block;
 		width: 100%;}
 
@@ -170,11 +193,39 @@ font}
 		font-size: 1.5rem;
 	}
 	#gif{
-	width: 70%;
+	width: 90%;
 	height: 90%;
 	margin: 0;
 	border: 2px solid #000000;
-	margin-left: 15%;
+	margin-left: 5%;
+	}
+
+	#GameOver{
+		margin: 0;
+		width: 70%;
+		height: 70%;
+		margin-left: 15%;
+	}
+	
+	#signOut{
+		display: none;
+	}
+	.dropdown{
+	display: initial;
+	margin: 0;
+	margin-right: 2%;
+	margin-top: 0.5%;
+	}
+
+
 }
 
+
+@media (max-width: 600px){
+	#GameOver{
+		margin: 0;
+		width: 90%;
+		height: 90%;
+		margin-left: 5%;
+	}
 }
