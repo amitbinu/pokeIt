@@ -13,7 +13,6 @@ var randomDot = function(){
 }
 
 function getRandomIntInclusive(min, max) {
-	console.log("minimum " + min + " maximum " + max);
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
@@ -53,8 +52,8 @@ var randomRadius = function(){
 		case 5:
 			return 7;
 		case 6:
-			return 100;
+			return 8;
 		case 7:
-			return 100;
+			return 9;
 	}
 }
