@@ -4,10 +4,10 @@ var timeInterval;
 var clickedOnce = false;
 var circle;
 var currentuser;
-
+var temprank;
+var rank;
 function setup(){
 	$("#menuBar").hide();
-	$("#menuBar").slideDown(1000);
 	firebase.auth().onAuthStateChanged(function (user){
 	 	if(user){
 	 		currentuser = user;
@@ -23,6 +23,19 @@ function setup(){
 				temp += name[i];
 			}
 			userName.html("Welcome " + temp);
+
+			firebase.database().ref("users/"+currentuser.uid+"/rank").once('value').then(function(snap){
+				 temprank = snap.val();
+				if(temprank != undefined && temprank != null){
+					rank.html("Rank : #" + temprank);
+					$("#menuBar").slideDown(1500);
+				}
+				else{
+					rank.html(0);
+					$("#menuBar").slideDown(1500);
+				}
+			})
+
 			time.hide();
 			if(!clickedOnce){
 				startButton.mousePressed(hideStartButton);
@@ -64,7 +77,7 @@ var startwatch;
 var stopwatch = function(){
 	startwatch = setInterval(count1,1000);
 }
-var counter1 = 5;
+var counter1 = 30;
 var count1 = function(){
 		userName.html("Time Left : " + --counter1 + " seconds");
 		if (counter1===0) {
@@ -143,8 +156,8 @@ function gameOver(){
 
 	firebase.database().ref("users/"+currentuser.uid+"/highScore").once('value').then(function(snapshot){
 		highScorenum = snapshot.val();
-		console.log(highScorenum);
-		if(highScorenum === undefined){
+	//	console.log(highScorenum);
+		if(highScorenum === undefined || highScorenum=== null){
 		firebase.database().ref("users/"+currentuser.uid).set({
 					name: currentuser.displayName,
 					highScore: score
@@ -153,7 +166,7 @@ function gameOver(){
 	}
 	else{
 		if (score >= highScorenum) {
-			firebase.database().ref("users"+currentuser.uid).set({
+			firebase.database().ref("users/"+currentuser.uid).set({
 				highScore: score
 			});
 			highScorenum = score;
@@ -162,11 +175,42 @@ function gameOver(){
 	var currentScore = select("#currentScore");
 	currentScore.html("Score : " + score);
 	var highScore = select("#highScore");
-	highScore.html("High Score : " + highScorenum);
+	highScore.html("Highest Score : " + highScorenum);
 	var gameover = select("#GameOver");
 	var currentRank = select("#currentRank");
-	currentRank.html("Current Rank : 5");
+	currentRank.html(rank.html());
 	gameover.show();
+	firebase.database().ref("users/"+currentuser.uid+"/rank").on('value',function(snap){
+				var tempscore = snap.val();
+		//		console.log(tempscore);
+				if (tempscore != undefined && tempscore != null){
+					var currentRank = select("#currentRank");
+					currentRank.html("Current Rank : " + tempscore);
+				//	$("#currentRank").bounce();
+				//	gameover.show();
+				}
+				else{
+					var currentRank = select("#currentRank");
+					currentRank.html("Current Rank : " + 0);
+				//	gameover.show();
+				}
+			});
+
+
+
+/*
+			var currentRank = select("#currentRank");
+	var temprank = snapshot.parent.child("rank").val();
+	console.log("The rank is " + temprank);
+	if (temprank != null && temprank != undefined) {
+		currentRank.html("Current Rank : " + tempscore);
+	}
+	else{
+		currentRank.html("Current Rank : " + 0);
+	}
+	
+					
+					gameover.show();*/
 	});
 	
 	startgame = false;
@@ -191,11 +235,5 @@ function signout(){
 		window.location.href = "index.html";
 	}, function(error){
 		console.log('Sign Out error', error);
-	});
-}
-
-function getstuff(){
-	return firebase.database().ref("users/"+currentuser.uid+"/highScore").once('value').then(function(snapshot){
-		var highscore = snapshot.val();
 	});
 }
