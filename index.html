@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>pokeIt</title>
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
     <!-- 
@@ -17,14 +17,17 @@
 </head>
 <body id="indexBody">
 	<h1 id="title">Poke It</h1>
-	<div id="firebaseui-auth-container"></div>
+	<div id="firebaseui-auth-container">
+<!--	<h1 id="anonymous">Sign in as a guest</h1> -->
+	</div>
 	<div id="information">
 		<div id="Description">
 			<h1  id="rules"><u> Game Rules </u></h1>
 			<h1 id="rule1"> - Click as many circle dots as you can ! </h1>
 		</div>
-		
-	<img src="pictures/pokeIt2.gif" id="gif">
+	<video id="gif" controls>
+		<source src="pictures/pokeIt2.mp4" type="video/mp4">
+	</video>
 		
 	</div>
 	</body>
