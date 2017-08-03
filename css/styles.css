@@ -59,7 +59,8 @@ body{
 #Description{
 	width: 50%;
 	margin: 0;
-	background-image: -webkit-linear-gradient(#ff9b96,#90f9f4);
+	background-image: -webkit-linear-gradient(#ff4b42,#3f42fc);
+	/*  -webkit-linear-gradient(#ff9b96,#90f9f4); */
 	border-radius: 6px;
 	margin: auto;
 }
@@ -74,10 +75,10 @@ font
 }
 
 #gif{
-	width: 40%;
-	height: 40%;
+	width: 45%;
+	height: 45%;
 	margin: auto;
-	border: 4px solid #000000;
+	border: 2px solid #000000;
 }
 
 
@@ -145,12 +146,20 @@ font
 	background: #1faf84;
 	border-radius: 0.3rem;
 	border: 0.01rem solid black;
-	padding: 0.5rem;
 	margin: auto;
+	max-height: 100%;
+}
+
+#exit{
+	display: none;
 }
 
 #signOut, #replay{
 	cursor: pointer;
+}
+
+#userRank, #userName{
+	padding: 0.5rem;
 }
 
 #GameOver{
@@ -203,10 +212,10 @@ font
 		font-size: 1.5rem;
 	}
 	#gif{
-	width: 90%;
+	width: 80%;
 	height: 60%;
 	margin: 0;
-	margin-left: 5%;
+	margin-left: 10%;
 	border: 2px solid #000000;
 	}
 
