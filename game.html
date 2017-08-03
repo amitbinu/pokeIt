@@ -4,7 +4,7 @@
 <head>
 
 	<title>pokeIt</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,10 +28,11 @@
 </head>
 <body id="gameBody">
 	<div id="menuBar">
-		<h1 class="userInfo" id="userRank">Rank : #5</h1>
+		<h1 class="userInfo" id="userRank">Rank : #  </h1>
 		<h1 class="userInfo" id="userName">Welcome Amit</h1>
+		<button class="userInfo" id="exit">Exit</button>
 		<button class="userInfo" id="signOut">Sign Out</button>
-		<div class="dropdown">
+	<!--	<div class="dropdown">
 		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		    Options
 		    <span class="caret"></span>
@@ -40,7 +41,7 @@
 		    <li><a href="#" id="signOut2">Sign Out</a></li>
 		    <li role="separator" class="divider"></li>
 		  </ul>
-		</div>
+		</div> -->
 	</div>
 	
 	<div id="circle1"></div>	
@@ -50,11 +51,10 @@
     	<button id="StartButton">Start</button>
     	<div id="time">3</div>
     	<div id="GameOver">
-    		<h1 id="currentRank">Current Rank</h1>
+    		<h1 id="currentRank"></h1>
     		<h1 id="currentScore"></h1>
     		<h1 id="highScore"></h1>
     		<button class = "userInfo" id="replay">Replay</button>
-    		
     	</div>
     </div>
   	</div>
