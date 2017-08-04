@@ -177,7 +177,7 @@ font
 	display: none;
 }
 
-@media (max-width:800px){
+@media (max-width:850px){
 	#title{
 		margin: 0;
 		margin-top: 0.05%;
