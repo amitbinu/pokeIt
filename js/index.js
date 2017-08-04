@@ -7,7 +7,9 @@ var currentuser;
 var temprank;
 var rank;
 function setup(){
+//	$("#exit").hide();
 	$("#menuBar").hide();
+	$("#menuBar").slideDown(1500);
 	firebase.auth().onAuthStateChanged(function (user){
 	 	if(user){
 	 		currentuser = user;
@@ -28,11 +30,9 @@ function setup(){
 				 temprank = snap.val();
 				if(temprank != undefined && temprank != null){
 					rank.html("Rank : #" + temprank);
-					$("#menuBar").slideDown(1500);
 				}
 				else{
 					rank.html(0);
-					$("#menuBar").slideDown(1500);
 				}
 			})
 
@@ -85,9 +85,12 @@ var count1 = function(){
 			circle.hide();
 			gameOver();
 		}
-		if (counter1 <= 5 && counter1 != 0) {
+		if (counter1 <= 5 && counter1 != 0 || counter1===25 || counter1 === 20 || counter1===15 || counter1 ===10) {
 			time.html(counter1);
 			time.show();
+		}
+		else{
+			time.hide();
 		}
 		
 }
@@ -105,7 +108,11 @@ var count = function(){
 		startgame = true;
 		stopwatch();
 		countdown();
-
+		$("#exit").slideDown(1000);
+		var exitButton = select("#exit");
+		exitButton.mousePressed(function(){
+			window.location.href= "game.html";
+		});
 	}
 	else{
 		time.html(--counter +"");
@@ -119,8 +126,8 @@ function countdown(){
 }
 
 function explode(){
+	$("#circle1").stop();
 	dontBounce=false;
-	
 	if (startgame === true) {
 		rank.html("Score : " + ++score);
 		$('#circle1').effect('explode',{'duration':220,'complete': makenewcircle});
