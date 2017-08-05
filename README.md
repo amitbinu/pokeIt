@@ -1,8 +1,8 @@
-# pokeIt
+# POKEIT
 
-## A web game where the player have to click / poke as many dots as they can within 30 seconds.
+### A web game where the player have to click / poke as many dots as they can within 30 seconds.
 
-*The user must log in using Facebook, Google or emailr account. *
+*The user must log in using Facebook, Google or email account. *
 
 *Shows the  the current user's rank compared to other users.*
 
