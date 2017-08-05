@@ -7,4 +7,5 @@ A web game where the player have to click / poke as many dots as they can within
 
 This game is created using jQuery and P5.
 
+The game can be found here - [www.pokeitnow.com](https://pokeitnow.com "Web game")
 ![alt text](https://github.com/amitbinu/pokeIt/blob/master/pokeIt.gif "Game gif")
