@@ -31,6 +31,6 @@ var uiConfig = {
       ui.start('#firebaseui-auth-container', uiConfig);
 
 $(document).ready(function(){
-        $("#gif").hide();
-        $("#gif").slideDown(2000);
+        $("#Description").hide();
+        $("#Description").slideDown(1000);
       })
