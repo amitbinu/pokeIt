@@ -13,4 +13,4 @@ __The game can be found here -__ [www.pokeitnow.com](https://pokeitnow.com "Web 
 
 ![alt text](https://github.com/amitbinu/pokeIt/blob/master/pictures/pokeIt.gif "Game gif")
 
-![alt text](https://github.com/amitbinu/pokeIt/blob/master/pictures/mobileView.PNG "Mobile View")
+![alt text](https://github.com/amitbinu/pokeIt/blob/master/pictures/mobileView.PNG?raw=true "Mobile View")
