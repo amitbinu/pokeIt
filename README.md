@@ -11,4 +11,6 @@ This game is created using jQuery and P5.
 __The game can be found here -__ [www.pokeitnow.com](https://pokeitnow.com "Web game")
 
 
-![alt text](https://github.com/amitbinu/pokeIt/blob/master/pokeIt.gif "Game gif")
+![alt text](https://github.com/amitbinu/pokeIt/blob/master/pictures/pokeIt.gif "Game gif")
+
+![alt text](https://github.com/amitbinu/pokeIt/blob/master/pictures/mobileView.PNG "Mobile View")
